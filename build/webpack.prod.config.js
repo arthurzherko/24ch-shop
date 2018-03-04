@@ -53,7 +53,8 @@ module.exports = merge(baseConfig, {
       }
     }),
     new UglifyJsPlugin({
-      compress: {
+      uglifyOptions: {
+        compress: {
         sequences: true,
         booleans: true,
         loops: true,
@@ -61,8 +62,9 @@ module.exports = merge(baseConfig, {
         warnings: false,
         drop_console: true,
         unsafe: true
+        }
       },
-      sourceMap: true
+      sourceMap: true,
     }),
     new webpack.optimize.OccurrenceOrderPlugin()
   ]
