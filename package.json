@@ -14,7 +14,9 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "compression-webpack-plugin": "^1.1.10",
+    "node-sass": "^4.7.2",
     "nodemon": "^1.17.1",
+    "sass-loader": "^6.0.7",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "webpack-hot-middleware": "^2.21.2"
