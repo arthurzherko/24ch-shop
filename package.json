@@ -12,8 +12,11 @@
     "test": "babel-node spec/run.js"
   },
   "dependencies": {
+    "compression-webpack-plugin": "^1.1.10",
+    "nodemon": "^1.17.1",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "webpack-hot-middleware": "^2.21.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
