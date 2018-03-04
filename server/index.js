@@ -1,7 +1,6 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import path from 'path'
-// import history from 'connect-history-api-fallback'
 import webpack from 'webpack'
 import webpackMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
@@ -11,7 +10,6 @@ import serveStatic from 'serve-static'
 const port = process.env.PORT || 5000
 const app = express()
 
-// app.use(history())
 app.use(bodyParser.json())
 
 if (process.env.NODE_ENV === 'development') {
