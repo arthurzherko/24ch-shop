@@ -7,6 +7,7 @@ const CompressionPlugin = require('compression-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = merge(baseConfig, {
   module: {
@@ -51,7 +52,7 @@ module.exports = merge(baseConfig, {
         NODE_ENV: '"production"'
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
+    new UglifyJsPlugin({
       compress: {
         sequences: true,
         booleans: true,
