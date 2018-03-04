@@ -6,13 +6,13 @@ import webpack from 'webpack'
 import webpackMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 import webpackConfig from '../build/webpack.dev.conf'
+import serveStatic from 'serve-static'
 
 const port = process.env.PORT || 5000
 const app = express()
 
 // app.use(history())
 app.use(bodyParser.json())
-app.use('/dist', express.static('dist'))
 
 if (process.env.NODE_ENV === 'development') {
   const compiler = webpack(webpackConfig)
@@ -23,6 +23,7 @@ if (process.env.NODE_ENV === 'development') {
   }))
   app.use(webpackHotMiddleware(compiler))
 }
+app.use(serveStatic(path.join(__dirname, '..', 'dist')))
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../index.html'))
